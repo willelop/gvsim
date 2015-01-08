@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/misc">
+        <file>files/googlesat.earth</file>
+    </qresource>
+</RCC>

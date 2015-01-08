@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/grass.jpg</file>
+        <file>images/gvsim_image_doc.png</file>
+        <file>images/gvsim_image.png</file>
+        <file>images/predator_back.png</file>
+        <file>images/predator_bottom.png</file>
+        <file>images/predator_front.png</file>
+        <file>images/predator_side.png</file>
+        <file>images/predator_top.png</file>
+        <file>images/terrain.png</file>
+        <file>images/terrain2.png</file>
+    </qresource>
+</RCC>
