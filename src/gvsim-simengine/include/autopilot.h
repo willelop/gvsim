@@ -1,8 +1,8 @@
 #ifndef AUTOPILOT_H
 #define AUTOPILOT_H
 
-#include "simengine/planestatusdata.h"
-#include "simengine/planemodeldata.h"
+#include "planestatusdata.h"
+#include "planemodeldata.h"
 #include "atmosphereengine.h"
 #include "planemodelengine.h"
 #include "simutils.h"

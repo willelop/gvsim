@@ -12,10 +12,12 @@
 #include <QSignalMapper>
 #include <QLabel>
 #include <QSlider>
-#include "simengine/planestatusdata.h"
-#include "simengine/planemodeldata.h"
+#include <QTimer>
+#include "planestatusdata.h"
+#include "planemodeldata.h"
 #include "typedefs.h"
-#include "simengine/simengine.h"
+#include "simengine.h"
+
 
 /*!
  * \brief The newFlightWindow class is the "New Flight" widget to start a new flight providing position, speed, altitude, etc...

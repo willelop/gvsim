@@ -175,8 +175,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(settingswidget01->settingssim01,SIGNAL(updateSimFreq(int)),centralwidget01,SLOT(setSimulationFreq(int)),Qt::DirectConnection);
 
     connect(settingsrecord01,SIGNAL(updateSubsampling(int)),recordplay01,SLOT(setRecordSubsampling(int)),Qt::DirectConnection);
-    connect(toolbar->toogleControP,SIGNAL(toggled(bool)),controlpanel01,SLOT(setShown(bool)));
-    connect(toolbar->toogleRecordP,SIGNAL(toggled(bool)),settingsrecord01,SLOT(setShown(bool)));
+    //connect(toolbar->toogleControP,SIGNAL(toggled(bool)),controlpanel01,SLOT(setShown(bool)));
+    //connect(toolbar->toogleRecordP,SIGNAL(toggled(bool)),settingsrecord01,SLOT(setShown(bool)));
     connect(settingsrecord01,SIGNAL(widgetClose()),toolbar,SLOT(rpanelClosed()));
     connect(settingsrecord01,SIGNAL(widgetShow()),toolbar,SLOT(rpanelOpened()));
     connect(controlpanel01,SIGNAL(widgetClose()),toolbar,SLOT(cpanelClosed()));
@@ -205,7 +205,7 @@ MainWindow::MainWindow(QWidget *parent)
     // FLIGHTGEAR SETTINGS
     connect(settingswidget01->settingsfg01,SIGNAL(outdata2fg(bool)),recordplay01,SLOT(setdata2fg(bool)));
     connect(settingswidget01->settingsfg01,SIGNAL(indatafromfg(bool)),commandstatus01,SLOT(updatereadFG(bool)));
-    connect(settingswidget01->settingsmap01,SIGNAL(mapThemeChanged(int)),centralwidget01,SLOT(updateMap(int)));
+    //connect(settingswidget01->settingsmap01,SIGNAL(mapThemeChanged(int)),centralwidget01,SLOT(updateMap(int)));
     connect(settingswidget01->settingsiface01,SIGNAL(displayedTabsChanged(bool,bool,bool,bool)),centralwidget01,SLOT(updateShownTabs(bool,bool,bool,bool)));
     connect(settingswidget01->settingsiface01,SIGNAL(updatedHorizSettings(bool,bool)),viewguille->view3d,SLOT(updateSettings(bool,bool)));
 

@@ -36,9 +36,11 @@ planeFileReader::planeFileReader(QWidget *parent) :
     connect(loadButton,SIGNAL(clicked()),this,SLOT(loadEditContent()));
     connect(closeButton,SIGNAL(clicked()),this,SLOT(close()));
  #ifdef WIN32
-    this->openFile(QCoreApplication::applicationDirPath()+"/predator.xml");
+    //this->openFile(QCoreApplication::applicationDirPath()+"/predator.xml");
+    this->openFile(":/files/predator.xml");
 #else
-    this->openFile(QDir::homePath()+"/.gvsim/predator.xml");
+    //this->openFile(QDir::homePath()+"/.gvsim/predator.xml");
+    this->openFile(":/files/predator.xml");
 #endif
     qDebug() << "Preloading Plane File" << QCoreApplication::applicationDirPath()+"/predator.xml";
 }

@@ -4,8 +4,8 @@
 #include <math.h>
 //#include <osgEarth/Map>
 //#include <osgEarth/ElevationQuery>
-#include "simengine/planestatusdata.h"
-#include "simengine/planemodeldata.h"
+#include "planestatusdata.h"
+#include "planemodeldata.h"
 #include <QVector3D>
 
 #define _RAD2GRAD 57.2957795

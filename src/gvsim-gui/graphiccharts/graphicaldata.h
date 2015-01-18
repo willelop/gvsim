@@ -6,7 +6,7 @@
 #include "graphiccharts/chartalphabeta.h"
 #include "graphiccharts/chartcompass.h"
 #include "graphiccharts/chartliftdrag.h"
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #include "graphiccharts/turnbank.h"
 #include "QGridLayout"
 /*!

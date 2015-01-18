@@ -7,7 +7,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QStringList>
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #include "typedefs.h"
 /*!
  * \brief The exportDataWorker class is a class that processes the export to CSV process in background.

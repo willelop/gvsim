@@ -4,3 +4,9 @@ documentation/
 /src/Makefile.Release
 /gvsim.pro.user
 /resources/images/.directory
+/build-gvsim-Qt5-Debug/
+/src/gvsim-simengine/build/
+/src/gvsim.pro.user
+/src/gvsim-gui/gvsim-gui.pro.user
+/src/gvsim-gui/resources/images/.directory
+/src/gvsim-simengine/gvsim-simengine.pro.user

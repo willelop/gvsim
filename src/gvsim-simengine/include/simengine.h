@@ -10,10 +10,10 @@
 #include <QVector3D>
 #include <QVector4D>
 #include <QElapsedTimer>
-#include "../commandstatusdata.h"
-#include "simengine/planestatusdata.h"
-#include "simengine/planemodeldata.h"
-#include "../typedefs.h"
+#include "commandstatusdata.h"
+#include "planestatusdata.h"
+#include "planemodeldata.h"
+#include "typedefs.h"
 #include "math.h"
 #include "stdlib.h"
 #include "time.h"
@@ -21,7 +21,6 @@
 #include "atmosphereengine.h"
 #include "simutils.h"
 #include "autopilot.h"
-#include "../typedefs.h"
 
 
 #define EARTH_RADIUS_ 6356766.0f

@@ -7,7 +7,7 @@
 #include <QVBoxLayout>
 #include <QDebug>
 #include <QTabWidget>
-#include "src/simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #include "graphiccharts/numericaldata.h"
 #include "graphiccharts/graphicaldata.h"
 #include "graphiccharts/chartsdata.h"

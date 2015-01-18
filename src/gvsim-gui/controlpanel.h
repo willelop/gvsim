@@ -15,7 +15,7 @@
 #include <QDebug>
 #include <QDockWidget>
 #include "commandstatusdata.h"
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 /*!
  * \brief The controlPanel class is a widget allowing the user to control and modify de inputs using the mouse and keyboard.
  * It also allows the user to manage the flaps, gear and missiles systems.

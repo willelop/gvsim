@@ -7,14 +7,14 @@
 #define _RAD2GRAD 57.2957795
 
 
-#include "simengine/planemodeldata.h"
-#include "simengine/planestatusdata.h"
+#include "planemodeldata.h"
+#include "planestatusdata.h"
 #include "simutils.h"
 #include <cmath>
 #include <QVector3D>
 #include <QDebug>
 
-#include "../typedefs.h"
+#include "typedefs.h"
 
 /*!
  * \brief The planeModelEngine class compute the plane states, such as aerodynamic forces and moments, gear forces and moments

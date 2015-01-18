@@ -8,7 +8,7 @@
 #include <QLabel>
 #include <QString>
 #include "graphiccharts/livegraph.h"
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #define CHARTS_NUM 8
 /*!
  * \brief The chartsData class contains all the real time graphics

@@ -23,7 +23,7 @@
 #include <QElapsedTimer>
 #include "utils/net_fdm.h"
 #include "stdint.h"
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #ifdef Q_OS_WIN32
 #include <Winsock2.h>
 #else
@@ -32,7 +32,8 @@
 #include <endian.h>
 #endif
 #include <QtEndian>
-
+//FIXME, dont take LOG from here
+#include "typedefs.h"
 
 
 

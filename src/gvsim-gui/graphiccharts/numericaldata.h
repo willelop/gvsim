@@ -5,7 +5,7 @@
 #include <QLabel>
 #include <QGridLayout>
 #include <QScrollArea>
-#include "src/simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #include "math.h"
 #include "stdlib.h"
 

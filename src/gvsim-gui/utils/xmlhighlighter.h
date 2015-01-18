@@ -19,6 +19,7 @@
 #include <QSyntaxHighlighter>
 #include <QTextCharFormat>
 #include <QColor>
+#include <QTextEdit>
 /*!
  * \brief The XmlHighlighter class helps to colorize the plane data
  */

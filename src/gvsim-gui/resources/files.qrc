@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="/misc">
+    <qresource prefix="/">
         <file>files/googlesat.earth</file>
+        <file>files/predator.xml</file>
     </qresource>
 </RCC>

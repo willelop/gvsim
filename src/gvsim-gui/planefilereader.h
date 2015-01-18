@@ -17,7 +17,7 @@
 #include <QtXml/QDomDocument>
 #include <QtXml/QDomElement>
 #include <QDomAttr>
-#include "simengine/planemodeldata.h"
+#include "planemodeldata.h"
 #include "curve3dhandler.h"
 #include "curvehandler.h"
 #include "typedefs.h"

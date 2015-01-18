@@ -13,14 +13,14 @@
 #include "centerwidget.h"
 #include "commandstatus.h"
 #include "mytoolbar.h"
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #include <QDebug>
 #include <QTimer>
 #include <QCoreApplication>
 #include <QMetaType>
 #include <QToolBox>
 #include <QRadioButton>
-#include "simengine/simengine.h"
+#include "simengine.h"
 #include "view3dwindow.h"
 #include "recordplayworker.h"
 #include "inputworker.h"

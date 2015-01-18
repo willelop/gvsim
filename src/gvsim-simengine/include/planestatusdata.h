@@ -1,6 +1,6 @@
 #ifndef PLANESTATUSDATA_H
 #define PLANESTATUSDATA_H
-#include "src/commandstatus.h"
+#include "commandstatusdata.h"
 /*!
  * \brief The athmosphereData struct contains the athmospheric information
  */

@@ -49,10 +49,10 @@ bool inputWorker::open(int stick)
           sensitivities[i] = 10;
           inverted[i] = false;
       }
-      return TRUE;
+      return true;
     } else {
       fprintf(stderr, "ERROR: couldn't open SDL joystick #%d", stick);
-      return FALSE;
+      return false;
     }
 }
 void inputWorker::close()

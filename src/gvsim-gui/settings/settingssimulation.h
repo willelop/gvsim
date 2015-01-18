@@ -9,7 +9,7 @@
 #include <QComboBox>
 #include <QRadioButton>
 #include <QGroupBox>
-#include <simengine/simengine.h>
+#include <simengine.h>
 /*!
  * \brief The settingsSimulation class holds the settings meeting "simulation" criteria, such as stop simulation on stall.
  */

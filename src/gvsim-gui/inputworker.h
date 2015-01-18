@@ -22,7 +22,8 @@
 #include <QSlider>
 #include <QMessageBox>
 #include <QKeyEvent>
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
+#include "typedefs.h"
 
 /*!
  * \brief The inputWorker class handles the joystick of the system refreshing periodically its status

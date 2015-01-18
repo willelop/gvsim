@@ -22,9 +22,9 @@
 #include <QDebug>
 #include <QVector>
 #include <QVector3D>
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #include "math.h"
-#include "simengine/simutils.h"
+#include "simutils.h"
 
 #define PI 3.14159
 

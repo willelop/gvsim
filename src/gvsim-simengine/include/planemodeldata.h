@@ -1,7 +1,6 @@
 #ifndef PLANEMODELDATA_H
 #define PLANEMODELDATA_H
 
-
 #include "curvehandler.h"
 #include "curve3dhandler.h"
 

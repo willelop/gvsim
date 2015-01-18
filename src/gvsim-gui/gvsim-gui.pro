@@ -23,6 +23,7 @@ DEFINES += RAD2DEG_=57.295779
 
 INCLUDEPATH += src
 
+INCLUDEPATH += ../gvsim-simengine/include
 
 win32 {
     #DEFINES += USING_3DMAP
@@ -68,110 +69,94 @@ unix {
 #    -losgGA \
 #    -losgViewer
     LIBS += -lX11
+    LIBS += -L../gvsim-simengine/ -lgvsim-simengine
 }
 
-SOURCES += src/main.cpp\
-        src/mainwindow.cpp \
-    src/settings/settingsjoystick.cpp \
-    src/stickdisplay.cpp \
-    src/commandstatus.cpp \
-    src/keyselector.cpp \
-    src/keyselectordialog.cpp \
-    src/view3dwidget.cpp \
-    src/recordplayworker.cpp \
-    src/inputworker.cpp \
-    src/logworker.cpp \
-    src/mytoolbar.cpp \
-    src/newflightwindow.cpp \
-    src/view3dwindow.cpp \
-    src/settings/settingsflightgear.cpp \
-    src/graphiccharts/chartalphabeta.cpp \
-    src/graphiccharts/chartcompass.cpp \
-    src/graphiccharts/chartliftdrag.cpp \
-    src/about.cpp \
-    src/toolwidgets/simtools.cpp \
-    src/toolwidgets/windtools.cpp \
-    src/exportdata.cpp \
-    src/exportdataworker.cpp \
-    src/curvehandler.cpp \
-    src/planefilereader.cpp \
-    src/curve3dhandler.cpp \
-    src/logdisplay.cpp \
-    src/controlpanel.cpp \
-    src/graphiccharts/livegraph.cpp \
-    src/toolwidgets/fueltools.cpp \
-    src/graphiccharts/turnbank.cpp \
-    src/simengine/simengine.cpp \
-    src/simengine/atmosphereengine.cpp \
-    src/simengine/simutils.cpp \
-    src/simengine/planemodelengine.cpp \
-    src/simengine/autopilot.cpp \
-    src/settings/settingsmap.cpp \
-    src/centerwidget.cpp \
-    src/graphiccharts/numericaldata.cpp \
-    src/graphiccharts/chartsdata.cpp \
-    src/graphiccharts/graphicaldata.cpp \
-    src/utils/xmlhighlighter.cpp \
-    src/settings/settingswindow.cpp \
-    src/settingsrecordplay.cpp \
-    src/settings/settingssimulation.cpp \
-    src/settings/settingsinterface.cpp \
-    src/myeventfilter.cpp \
-    src/toolwidgets/autopilottools.cpp
+SOURCES += main.cpp\
+        mainwindow.cpp \
+    settings/settingsjoystick.cpp \
+    stickdisplay.cpp \
+    commandstatus.cpp \
+    keyselector.cpp \
+    keyselectordialog.cpp \
+    view3dwidget.cpp \
+    recordplayworker.cpp \
+    inputworker.cpp \
+    logworker.cpp \
+    mytoolbar.cpp \
+    newflightwindow.cpp \
+    view3dwindow.cpp \
+    settings/settingsflightgear.cpp \
+    graphiccharts/chartalphabeta.cpp \
+    graphiccharts/chartcompass.cpp \
+    graphiccharts/chartliftdrag.cpp \
+    about.cpp \
+    toolwidgets/simtools.cpp \
+    toolwidgets/windtools.cpp \
+    exportdata.cpp \
+    exportdataworker.cpp \
+    planefilereader.cpp \
+    logdisplay.cpp \
+    controlpanel.cpp \
+    graphiccharts/livegraph.cpp \
+    toolwidgets/fueltools.cpp \
+    graphiccharts/turnbank.cpp \
+    settings/settingsmap.cpp \
+    centerwidget.cpp \
+    graphiccharts/numericaldata.cpp \
+    graphiccharts/chartsdata.cpp \
+    graphiccharts/graphicaldata.cpp \
+    utils/xmlhighlighter.cpp \
+    settings/settingswindow.cpp \
+    settingsrecordplay.cpp \
+    settings/settingssimulation.cpp \
+    settings/settingsinterface.cpp \
+    myeventfilter.cpp \
+    toolwidgets/autopilottools.cpp
 
-HEADERS  += src/mainwindow.h \
-    src/settings/settingsjoystick.h \
-    src/stickdisplay.h \
-    src/typedefs.h \
-    src/commandstatus.h \
-    src/keyselector.h \
-    src/keyselectordialog.h \
-    src/commandstatusdata.h \
-    src/view3dwidget.h \
-    src/recordplayworker.h \
-    src/inputworker.h \
-    src/logworker.h \
-    src/mytoolbar.h \
-    src/newflightwindow.h \
-    src/view3dwindow.h \
-    src/settings/settingsflightgear.h \
-    src/graphiccharts/chartalphabeta.h \
-    src/graphiccharts/chartcompass.h \
-    src/graphiccharts/chartliftdrag.h \
-    src/about.h \
-    src/toolwidgets/simtools.h \
-    src/toolwidgets/windtools.h \
-    src/exportdata.h \
-    src/exportdataworker.h \
-    src/curvehandler.h \
-    src/planefilereader.h \
-    src/curve3dhandler.h \
-    src/logdisplay.h \
-    src/controlpanel.h \
-    src/graphiccharts/livegraph.h \
-    src/toolwidgets/fueltools.h \
-    src/graphiccharts/turnbank.h \
-    src/simengine/simengine.h \
-    src/simengine/atmosphereengine.h \
-    src/simengine/simutils.h \
-    src/simengine/planemodelengine.h \
-    src/simengine/autopilot.h \
-    src/simengine/planestatusdata.h \
-    src/simengine/planemodeldata.h \
-    src/settings/settingsmap.h \
-    src/centerwidget.h \
-    src/graphiccharts/numericaldata.h \
-    src/graphiccharts/chartsdata.h \
-    src/graphiccharts/graphicaldata.h \
-    src/utils/xmlhighlighter.h \
-    src/utils/net_fdm.h \
-    src/utils/net_ctrls.h \
-    src/settings/settingswindow.h \
-    src/settingsrecordplay.h \
-    src/settings/settingssimulation.h \
-    src/settings/settingsinterface.h \
-    src/myeventfilter.h \
-    src/toolwidgets/autopilottools.h
+HEADERS  += mainwindow.h \
+    settings/settingsjoystick.h \
+    stickdisplay.h \
+    commandstatus.h \
+    keyselector.h \
+    keyselectordialog.h \
+    commandstatusdata.h \
+    view3dwidget.h \
+    recordplayworker.h \
+    inputworker.h \
+    logworker.h \
+    mytoolbar.h \
+    newflightwindow.h \
+    view3dwindow.h \
+    settings/settingsflightgear.h \
+    graphiccharts/chartalphabeta.h \
+    graphiccharts/chartcompass.h \
+    graphiccharts/chartliftdrag.h \
+    about.h \
+    toolwidgets/simtools.h \
+    toolwidgets/windtools.h \
+    exportdata.h \
+    exportdataworker.h \
+    planefilereader.h \
+    logdisplay.h \
+    controlpanel.h \
+    graphiccharts/livegraph.h \
+    toolwidgets/fueltools.h \
+    graphiccharts/turnbank.h \
+    settings/settingsmap.h \
+    centerwidget.h \
+    graphiccharts/numericaldata.h \
+    graphiccharts/chartsdata.h \
+    graphiccharts/graphicaldata.h \
+    utils/xmlhighlighter.h \
+    utils/net_fdm.h \
+    utils/net_ctrls.h \
+    settings/settingswindow.h \
+    settingsrecordplay.h \
+    settings/settingssimulation.h \
+    settings/settingsinterface.h \
+    myeventfilter.h \
+    toolwidgets/autopilottools.h
 
 RESOURCES += \
     resources/icons.qrc \
@@ -180,3 +165,6 @@ RESOURCES += \
 
 OTHER_FILES += \
     gvsim.rc
+
+SUBDIRS += \
+    src/simengine/simengine.pro

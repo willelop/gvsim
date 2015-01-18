@@ -6,7 +6,7 @@
 #include <QDebug>
 #include <QGLWidget>
 #include <QPixmap>
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 
 /*!
  * \brief The chartLiftDrag class represents graphically the aerodynamic forces in the stability axes

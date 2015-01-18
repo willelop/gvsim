@@ -7,7 +7,7 @@
 #include <QSpinBox>
 #include <QLabel>
 #include <QCheckBox>
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #include <stdlib.h>
 #include <cmath>
 /*!

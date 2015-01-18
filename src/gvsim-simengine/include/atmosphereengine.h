@@ -1,8 +1,12 @@
 #ifndef ATMOSPHEREENGINE_H
 #define ATMOSPHEREENGINE_H
 
+
+#include <math.h>
+#include <stdlib.h>
 #include <QElapsedTimer>
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
+
 
 #define G_ACCEL 9.81f
 
@@ -33,6 +37,7 @@ class atmosphereEngine
 public:
     atmosphereEngine();
     void updateAtmosphere(planeStatusData *state);
+    void updateISADiff(float isadiff);
 private:
     float temp11, dens11, pres11;
     float temp25, dens25, pres25;
@@ -40,8 +45,7 @@ private:
 //    QElapsedTimer perturbDuration;
 //    QElapsedTimer perturbInterval;
     float ISADiff;
-public slots:
-    void updateISADiff(float isadiff);
+
 
 };
 

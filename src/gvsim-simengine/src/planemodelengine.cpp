@@ -10,6 +10,9 @@ planeModelEngine::planeModelEngine()
     this->modelLoaded = false;
     this->deltarpm = 0;
     this->gear_ground_alt.clear();
+    this->gear_ground_alt.push_back(0.0f);
+    this->gear_ground_alt.push_back(0.0f);
+    this->gear_ground_alt.push_back(0.0f);
     this->gearState = 0.0;
 }
 /*!
@@ -251,8 +254,26 @@ void planeModelEngine::computeInertias(planeStatusData *state)
 void planeModelEngine::computeGroundLevel(planeStatusData *state)
 {
 
-    state->state.ground_altitude = 0.0;
-}
+    static int counter = 0;
+    static int gearSteps = 1;
+    if(counter%gearSteps == 0  || state->state.reseting == true){
+        double globalpos[3][3];
+        simUtils::body2local(data.landingWheels[0].position,state,globalpos[0]);
+        simUtils::body2local(data.landingWheels[1].position,state,globalpos[1]);
+        simUtils::body2local(data.landingWheels[2].position,state,globalpos[2]);
+        for(int i = 0; i < 3; i++)
+        {
+            //Force to zero all the altitude below wheels
+            gear_ground_alt[i] = 0.0f;
+        }
+        if((state->state.position[2] - gear_ground_alt[0]) < 10){
+            gearSteps = 3;
+        }else{
+            gearSteps = 50;
+        }
+        state->state.ground_altitude = gear_ground_alt[0];
+    }
+    counter++;}
 /*!
  * \brief planeModelEngine::computeGearForces calculates the forces of the ground interaction
  * \param state plane state

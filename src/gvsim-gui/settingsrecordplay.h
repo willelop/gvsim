@@ -17,7 +17,7 @@
 #include <QDataStream>
 #include <QMessageBox>
 #include <QRadioButton>
-#include "simengine/planestatusdata.h"
+#include "planestatusdata.h"
 #include "typedefs.h"
 #include <QCheckBox>
 #include <QSlider>
