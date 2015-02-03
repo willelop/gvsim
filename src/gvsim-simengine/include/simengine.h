@@ -26,10 +26,7 @@
 #define EARTH_RADIUS_ 6356766.0f
 #define G_ACCEL 9.81f
 #define EARTH_OMEGA 0.00007292
-#define PI 3.14159265359
 #define FLAPS_LPF 0.004f
-
-
 
 
 /*!

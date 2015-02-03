@@ -9,7 +9,6 @@
 #include <QTimer>
 #include <QToolBar>
 #include <QDockWidget>
-#include <osgEarth/Map>
 #include "centerwidget.h"
 #include "commandstatus.h"
 #include "mytoolbar.h"

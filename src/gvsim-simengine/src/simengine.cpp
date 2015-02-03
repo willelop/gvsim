@@ -10,7 +10,7 @@ simEngine::simEngine(QObject *parent) :
     this->paused = true;
     this->stopped = true;
     this->modelLoaded = false;
-    this->earth_radius = 6370000;
+    this->earth_radius = EARTH_RADIUS_;
     this->current_iter =0 ;
     this->pendingfuelchange = false;
     this->fuelchange = 1.0f;
@@ -134,17 +134,17 @@ void simEngine::run()
             this->evaluateSituation(&innerState,&thrash,simulationStep);
         }
         // Check Latitude Longitude
-        if(innerState.state.position[1] > PI){
-            innerState.state.position[1] -= 2*PI;
-            adamBashforthStates[0].state.position[1] -= 2*PI;
-            adamBashforthStates[1].state.position[1] -= 2*PI;
-            adamBashforthStates[2].state.position[1] -= 2*PI;
+        if(innerState.state.position[1] > M_PI){
+            innerState.state.position[1] -= 2*M_PI;
+            adamBashforthStates[0].state.position[1] -= 2*M_PI;
+            adamBashforthStates[1].state.position[1] -= 2*M_PI;
+            adamBashforthStates[2].state.position[1] -= 2*M_PI;
         }
-        if(innerState.state.position[1] < -PI){
-            innerState.state.position[1] += 2*PI;
-            adamBashforthStates[0].state.position[1] += 2*PI;
-            adamBashforthStates[1].state.position[1] += 2*PI;
-            adamBashforthStates[2].state.position[1] += 2*PI;
+        if(innerState.state.position[1] < -M_PI){
+            innerState.state.position[1] += 2*M_PI;
+            adamBashforthStates[0].state.position[1] += 2*M_PI;
+            adamBashforthStates[1].state.position[1] += 2*M_PI;
+            adamBashforthStates[2].state.position[1] += 2*M_PI;
         }
 
         //Store Current Time

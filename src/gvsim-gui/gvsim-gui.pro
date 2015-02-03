@@ -20,54 +20,21 @@ DEFINES += RECORDING_FACTOR=1
 DEFINES += VIEWING_STEP=0.02
 DEFINES += RAD2DEG_=57.295779
 
-
 INCLUDEPATH += src
-
 INCLUDEPATH += ../gvsim-simengine/include
 
 win32 {
-    #DEFINES += USING_3DMAP
     QMAKE_LFLAGS= -enable-auto-import
     RC_FILE = gvsim.rc
     CONFIG += release
     INCLUDEPATH += C:\Developer\SDL-1.2.15\include
-#    INCLUDEPATH += $$quote(C:\Program Files (x86)\marble\include)
-#    INCLUDEPATH += $$quote(C:\Program Files (x86)\OSGEARTH\include)
-#    INCLUDEPATH += $$quote(C:\Program Files (x86)\OpenSceneGraph\include)
-#    LIBS += $$quote(C:/Program Files (x86)\marble\libmarblewidget.dll)
-#    LIBS += -L"C:\Program Files (x86)\marble" -l"libmarblewidget"
-#    LIBS += -L:$$quote(C:\Program Files (x86)\OSGEARTH\lib)
-#    LIBS += -L:$$quote(C:\Program Files (x86)\OpenSceneGraph\lib)
-#    LIBS += $$quote(C:/Program Files (x86)\OSGEARTH\bin\libosgEarth.dll)
-#    LIBS += $$quote(C:/Program Files (x86)\OSGEARTH\bin\libosgEarthQt.dll)
-#    LIBS += $$quote(C:/Program Files (x86)\OSGEARTH\bin\libosgEarthUtil.dll)
-#    LIBS += $$quote(C:/Program Files (x86)\OpenSceneGraph\bin\libosg.dll)
-#    LIBS += $$quote(C:/Program Files (x86)\OpenSceneGraph\bin\libOpenThreads.dll)
-#    LIBS += $$quote(C:/Program Files (x86)\OpenSceneGraph\bin\libosgDB.dll)
-#    LIBS += $$quote(C:/Program Files (x86)\OpenSceneGraph\bin\libosgGA.dll)
-#    LIBS += $$quote(C:/Program Files (x86)\OpenSceneGraph\bin\libosgViewer.dll)
     LIBS  += C:\Developer\SDL-1.2.15\bin\SDL.dll
     LIBS += -lwsock32
 }
 unix {
-    DEFINES += USING_3DMAP
-    #DEFINES += TESTING_GPROF
-#    QMAKE_CXXFLAGS_DEBUG += -pg
-#    QMAKE_LFLAGS_DEBUG += -pg
+    QMAKE_CXXFLAGS_DEBUG += -pg
+    QMAKE_LFLAGS_DEBUG += -pg
     LIBS += -lSDL -lGLU
-#    LIBS += -L/usr/local/lib \
-#    -lmarblewidget
-#    #OSG
-#    LIBS += -L/usr/local/lib \
-#    -lOpenThreads \
-#    -losgEarth \
-#    -losgEarthQt \
-#    -losgEarthUtil \
-#    -losg \
-#    -losgQt \
-#    -losgDB \
-#    -losgGA \
-#    -losgViewer
     LIBS += -lX11
     LIBS += -L../gvsim-simengine/ -lgvsim-simengine
 }

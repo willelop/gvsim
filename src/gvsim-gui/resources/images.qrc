@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/images">
+    <qresource prefix="/">
         <file>images/grass.jpg</file>
         <file>images/gvsim_image_doc.png</file>
         <file>images/gvsim_image.png</file>

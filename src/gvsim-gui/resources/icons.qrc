@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/icons">
+    <qresource prefix="/">
         <file>icons/cockpit.png</file>
         <file>icons/exit.png</file>
         <file>icons/export.png</file>

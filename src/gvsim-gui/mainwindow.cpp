@@ -101,11 +101,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     viewMenu->addAction(showCPanelAction);
     viewMenu->addAction(showToolsAction);
-#ifndef TESTING_GPROF
-    QAction *worldview = new QAction(QIcon(QPixmap(":/icons/gsim-icon.png")),tr("&View 3D World"),this);
-    viewMenu->addAction(worldview);
-#endif
-
     helpMenu->addAction(aboutAction);
 
     this->setMenuBar(menubar);
@@ -175,8 +170,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(settingswidget01->settingssim01,SIGNAL(updateSimFreq(int)),centralwidget01,SLOT(setSimulationFreq(int)),Qt::DirectConnection);
 
     connect(settingsrecord01,SIGNAL(updateSubsampling(int)),recordplay01,SLOT(setRecordSubsampling(int)),Qt::DirectConnection);
-    //connect(toolbar->toogleControP,SIGNAL(toggled(bool)),controlpanel01,SLOT(setShown(bool)));
-    //connect(toolbar->toogleRecordP,SIGNAL(toggled(bool)),settingsrecord01,SLOT(setShown(bool)));
+    connect(toolbar->toogleControP,SIGNAL(toggled(bool)),controlpanel01,SLOT(setVisible(bool)));
+    connect(toolbar->toogleRecordP,SIGNAL(toggled(bool)),settingsrecord01,SLOT(setVisible(bool)));
     connect(settingsrecord01,SIGNAL(widgetClose()),toolbar,SLOT(rpanelClosed()));
     connect(settingsrecord01,SIGNAL(widgetShow()),toolbar,SLOT(rpanelOpened()));
     connect(controlpanel01,SIGNAL(widgetClose()),toolbar,SLOT(cpanelClosed()));
