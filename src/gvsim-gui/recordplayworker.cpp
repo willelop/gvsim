@@ -414,7 +414,7 @@ void recordPlayWorker::outputData(planeStatusData _status)
             this->sendData2Fg(_status);
         }
     }else{
-        qDebug() << "Not Viewing";
+        //qDebug() << "Not Viewing";
     }
 }
 

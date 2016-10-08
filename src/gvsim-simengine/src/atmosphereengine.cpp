@@ -29,7 +29,7 @@ void atmosphereEngine::updateAtmosphere(planeStatusData *state)
     float potential_altitude = EARTH_RADIUS_*state->state.position[2] / (EARTH_RADIUS_+state->state.position[2]);
     if(potential_altitude <= 11000){ //TROPO
         state->atmosphere.t = std::min(T_SEALEVEL+state->atmosphere.ISADiff,T_SEALEVEL+state->atmosphere.ISADiff + DELTA_T_H*potential_altitude);
-        state->atmosphere.p = std::min(P_SEALEVEL*exp(P_CTE*log(T_SEALEVEL/state->atmosphere.t)),(double)P_SEALEVEL);
+        state->atmosphere.p = std::min(P_SEALEVEL*exp(P_CTE*log(T_SEALEVEL/state->atmosphere.t)),P_SEALEVEL);
         state->atmosphere.d = (state->atmosphere.p / state->atmosphere.t)*(M_0_AIR/R_S_AIR);
     }else if(potential_altitude <=25000){ //LOW STRATO
         state->atmosphere.t = temp11;

@@ -870,5 +870,7 @@ void view3dWidget::updateSettings(bool show3d, bool showElev)
 }
 float view3dWidget::demaltitude(double lat, double lon)
 {
+    Q_UNUSED(lat);
+    Q_UNUSED(lon);
     return 0.0f;
 }

@@ -10,6 +10,8 @@ documentation/
 /src/gvsim-gui/gvsim-gui.pro.user
 /src/gvsim-gui/resources/images/.directory
 /src/gvsim-simengine/gvsim-simengine.pro.user
+/build*
+*mapcache*
 
 # Prerequisites
 *.d
@@ -43,3 +45,4 @@ documentation/
 *.exe
 *.out
 *.app
+*moc_*.cpp
