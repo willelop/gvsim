@@ -11,6 +11,11 @@ centerWidget::centerWidget(QWidget *parent) :
     datacontainer01->addTab(numericaldata01,tr("Numerical Data"));
     datacontainer01->addTab(graphicaldata01,tr("Graphical Data"));
     datacontainer01->addTab(charts01,tr("Live Graphs"));
+#ifdef USE_MAPVIEWER
+    mapviewer01 = new Map3D();
+    datacontainer01->addTab(new QLabel("hola"),tr("Map"));
+#endif
+
     mainlayout->addWidget(datacontainer01,2);
     this->setLayout(mainlayout);
 }
@@ -22,6 +27,9 @@ void centerWidget::updateStatus(planeStatusData _status)
 {
     this->numericaldata01->receivePackage(_status);
     this->graphicaldata01->receivePackage(_status);
+#ifdef USE_MAPVIEWER
+    this->mapviewer01->updatePosition(_status);
+#endif
     this->charts01->updateValues(_status);
 }
 /*!
@@ -45,6 +53,8 @@ void centerWidget::updateShownTabs(bool num, bool graph, bool live, bool map)
     if(num)     datacontainer01->addTab(numericaldata01,tr("Numerical Data"));
     if(graph)   datacontainer01->addTab(graphicaldata01,tr("Graphical Data"));
     if(live)    datacontainer01->addTab(charts01,tr("Live Graphs"));
+    if(map)    datacontainer01->addTab(mapviewer01,tr("Map"));
+
 
 
 }

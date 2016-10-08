@@ -40,6 +40,9 @@
 #include "typedefs.h"
 #include "settingsrecordplay.h"
 #include "myeventfilter.h"
+#ifdef USE_3DVIEW
+#include "3dworld/world3d.h"
+#endif
 
 /*!
  * \brief The MainWindow class is the main window of the software, containing everything else
@@ -76,6 +79,9 @@ private:
     windTools *windtools01;
     logDisplay *logDisplay01;
     controlPanel *controlpanel01;
+#ifdef USE_3DVIEW
+    world3d *world3d01;
+#endif
 
     exportData *exportData01;
     exportDataWorker *exportDataWorker01;

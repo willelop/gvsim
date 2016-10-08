@@ -11,6 +11,9 @@
 #include "graphiccharts/numericaldata.h"
 #include "graphiccharts/graphicaldata.h"
 #include "graphiccharts/chartsdata.h"
+#ifdef USE_MAPVIEWER
+#include "3dworld/map3d.h"
+#endif
 
 /*!
  * \brief The centerWidget class is the central widget of the software window
@@ -25,6 +28,9 @@ private:
     numericalData *numericaldata01;
     graphicalData *graphicaldata01;
     chartsData *charts01;
+#ifdef USE_MAPVIEWER
+    Map3D *mapviewer01;
+#endif
 public slots:
     void updateStatus(planeStatusData);
     void setSpeed(int speed);

@@ -12,13 +12,46 @@ TEMPLATE = app
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 equals(QT_MAJOR_VERSION, 5): DEFINES += USING_QT5
 
-DEFINES += QT_NO_DEBUG_OUTPUT
+#DEFINES += QT_NO_DEBUG_OUTPUT
 
 DEFINES += INTEGRATION_STEP_MILLIS=10
 DEFINES += DEFAULT_INTEGRATION_STEP=0.01
 DEFINES += RECORDING_FACTOR=1
 DEFINES += VIEWING_STEP=0.02
 DEFINES += RAD2DEG_=57.295779
+
+
+CONFIG += use_mapviewer
+#CONFIG += use_3dview
+use_mapviewer {
+    DEFINES += USE_MAPVIEWER
+    message("Using Mapviewer")
+    HEADERS  +=     3dworld/map3d.h
+    SOURCES +=     3dworld/map3d.cpp
+}
+
+use_3dview {
+    DEFINES += USE_3DVIEW
+    message("Using 3dworld")
+    HEADERS  += 3dworld/world3d.h
+    SOURCES += 3dworld/world3d.cpp
+}
+
+user_3dview|use_mapviewer {
+    INCLUDEPATH += /usr/local/include
+    LIBS += -L/usr/local/lib64
+    LIBS += -L/usr/local/lib \
+    -lOpenThreads \
+    -losgEarth \
+    -losgEarthQt \
+    -losgEarthUtil \
+    -losg \
+    -losgQt \
+    -losgDB \
+    -losgGA \
+    -losgViewer
+    LIBS += -lX11
+}
 
 INCLUDEPATH += src
 INCLUDEPATH += ../gvsim-simengine/include
@@ -87,7 +120,6 @@ HEADERS  += mainwindow.h \
     commandstatus.h \
     keyselector.h \
     keyselectordialog.h \
-    commandstatusdata.h \
     view3dwidget.h \
     recordplayworker.h \
     inputworker.h \
@@ -125,6 +157,7 @@ HEADERS  += mainwindow.h \
     myeventfilter.h \
     toolwidgets/autopilottools.h
 
+
 RESOURCES += \
     resources/icons.qrc \
     resources/images.qrc \
@@ -135,3 +168,5 @@ OTHER_FILES += \
 
 SUBDIRS += \
     src/simengine/simengine.pro
+
+DISTFILES +=

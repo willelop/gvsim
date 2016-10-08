@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>files/googlesat.earth</file>
         <file>files/predator.xml</file>
+        <file>files/openstreetmap_full.earth</file>
     </qresource>
 </RCC>

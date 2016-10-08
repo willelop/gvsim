@@ -33,6 +33,11 @@ MainWindow::MainWindow(QWidget *parent)
     view3d->setContentsMargins(0,0,0,0);
     view3dWindow *viewguille = new view3dWindow(view3d);
     view3d->setWidget(viewguille);
+#ifdef USE_3DVIEW
+    world3d01 = new world3d(this);
+    world3d01->hide();
+    world3d01->setEnabled(true);
+#endif
 
     controlpanel01 = new controlPanel(this);
     controlpanel01->hide();
@@ -80,6 +85,11 @@ MainWindow::MainWindow(QWidget *parent)
     QMenu *viewMenu = menubar->addMenu(tr("&View"));
     QAction *showCPanelAction = new QAction(QIcon(QPixmap(":/icons/cockpit.png")),tr("&ControlPanel"),this);
     QAction *showToolsAction = new QAction(QIcon(QPixmap(":/icons/tools.png")),tr("&Tools"),this);
+#ifdef USE_3DVIEW
+    QAction *show3dViewAction = new QAction(QIcon(QPixmap(":/icons/tools.png")),tr("&3D View"),this);
+    connect(show3dViewAction,SIGNAL(triggered()),this->world3d01,SLOT(show()));
+    viewMenu->addAction(show3dViewAction);
+#endif
 
 
 
@@ -182,6 +192,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(recordplay01,SIGNAL(sendNewStatus(planeStatusData)),centralwidget01,SLOT(updateStatus(planeStatusData)),Qt::QueuedConnection);
     connect(recordplay01,SIGNAL(sendNewStatus(planeStatusData)),viewguille->view3d,SLOT(receivePackage(planeStatusData)),Qt::QueuedConnection);
     connect(recordplay01,SIGNAL(sendNewStatus(planeStatusData)),controlpanel01,SLOT(receivePackage(planeStatusData)),Qt::QueuedConnection);
+#ifdef USE_3DVIEW
+    connect(simengine01,SIGNAL(sendOutput(planeStatusData)),world3d01,SLOT(updatePosition(planeStatusData)),Qt::QueuedConnection);
+    connect(simengine01,SIGNAL(sendOutput(planeStatusData)),world3d01,SLOT(updatePosition(planeStatusData)),Qt::QueuedConnection);
+
+#endif
+
 
 
     //TOOLS CONNNECTIONS
